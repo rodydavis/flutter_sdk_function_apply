@@ -20,6 +20,8 @@ abstract class FlutterLibrary {
         for (var key in statics.keys)
           for (var key2 in statics[key]!.keys)
             '$key.$key2': statics[key]![key2],
+        for (var key in enums.keys)
+          for (var key2 in enums[key]!) '$key.$key2': key2,
       };
 
   Object? operator [](String key) => all[key];

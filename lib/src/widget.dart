@@ -119,6 +119,8 @@ class FlutterSdkFunctionApply {
             final value = lib['$type.$target'];
             if (value is Function) {
               return value();
+            } else if (value is Object) {
+              return value;
             }
           }
         }
