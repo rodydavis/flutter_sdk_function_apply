@@ -1,0 +1,31 @@
+name: github pages
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+        with:
+          submodules: true
+
+      - name: Setup Flutter
+        uses: subosito/flutter-action@v1
+        with:
+          channel: 'stable'
+
+      - name: Install
+        run: flutter pub get
+
+      - name: Build
+        run: cd example && flutter build web --no-tree-shake-icons --base-href=/flutter_sdk_function_apply/
+
+      - name: Deploy
+        uses: peaceiris/actions-gh-pages@v3
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          publish_dir: ./example/build/web

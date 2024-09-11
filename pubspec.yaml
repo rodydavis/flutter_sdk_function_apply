@@ -1,0 +1,28 @@
+name: flutter_sdk_function_apply
+description: Flutter SDK via Function.apply
+version: 0.0.1
+homepage:
+
+environment:
+  sdk: ^3.5.0
+  flutter: ">=1.17.0"
+
+dependencies:
+  flutter:
+    sdk: flutter
+
+dev_dependencies:
+  flutter_test:
+    sdk: flutter
+  flutter_lints: ^4.0.0
+  mustache_template: ^2.0.0
+  http: ^1.2.2
+  html: ^0.15.4
+  sqlite3: ^2.4.6
+  recase: ^4.1.0
+  collection: ^1.18.0
+
+flutter:
+
+scripts:
+  generate: dart scripts/generate_library.dart animation cupertino foundation gestures material painting physics rendering scheduler semantics services widgets
