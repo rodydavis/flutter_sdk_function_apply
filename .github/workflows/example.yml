@@ -22,7 +22,7 @@ jobs:
         run: flutter pub get
 
       - name: Build
-        run: cd example && flutter build web --no-tree-shake-icons --base-href=/flutter_sdk_function_apply/
+        run: cd example && flutter build web --no-tree-shake-icons --base-href=/flutter_sdk_function_apply/ -O2
 
       - name: Deploy
         uses: peaceiris/actions-gh-pages@v3
