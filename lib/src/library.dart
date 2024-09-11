@@ -13,16 +13,15 @@ abstract class FlutterLibrary {
 
   Map<String, List<Enum>> get enums;
 
-  Map<String, Object?> get all => {
-        ...classes,
-        ...functions,
-        ...constants,
-        for (var key in statics.keys)
-          for (var key2 in statics[key]!.keys)
-            '$key.$key2': statics[key]![key2],
-        for (var key in enums.keys)
-          for (var key2 in enums[key]!) '$key.$key2': key2,
-      };
+  late final Map<String, Object?> all = {
+    ...classes,
+    ...functions,
+    ...constants,
+    for (var key in statics.keys)
+      for (var key2 in statics[key]!.keys) '$key.$key2': statics[key]![key2],
+    for (var e in enums.entries)
+      for (var item in e.value) '${e.key}.${item.name}': () => item,
+  };
 
   Object? operator [](String key) => all[key];
 }

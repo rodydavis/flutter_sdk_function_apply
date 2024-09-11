@@ -58,5 +58,13 @@ void main() {
       });
       expect(boxConstraintsExpand(), isA<BoxConstraints>());
     });
+
+    test('TextAlign', () {
+      final textAlignCenter = FlutterSdkFunctionApply.fromJson({
+        '@type': 'TextAlign',
+        '@static': 'center',
+      });
+      expect(textAlignCenter(), TextAlign.center);
+    });
   });
 }
