@@ -21,6 +21,8 @@ dev_dependencies:
   sqlite3: ^2.4.6
   recase: ^4.1.0
   collection: ^1.18.0
+  analyzer: ^6.7.0
+  _fe_analyzer_shared: ^67.0.0
 
 flutter:
 

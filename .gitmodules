@@ -1,0 +1,6 @@
+[submodule "third_party/flutter"]
+	path = third_party/flutter
+	url = https://github.com/flutter/flutter
+[submodule "third_party/flutter_analyzer"]
+	path = third_party/flutter_analyzer
+	url = https://github.com/rodydavis/flutter_analyzer
